@@ -11,31 +11,34 @@ int check(int arraySize){
 
 
 }
-
 //sort using selection sort algorithm
  int sort(int array[],int size){
      // declare a variable to store the maximum value and the temporary maximum
-
-     for(int i = 0; i < size  ; i++){
-        int max = array[i];
-        int tempMax = i;
-         for(int j = i; j < size; j++){
-             if (array[j] > array[tempMax]){
-                 max = array[j];
-                 tempMax = j;
+    int count = 0;
+     for(int i = 0; i < size - 1  ; i++){
+        int min = array[i];
+        int tempMin = i;
+         for(int j = i +1; j < size; j++){
+             if (array[j] < array[tempMin]){
+                 min = array[j];
+                 tempMin = j;
 
              }
 
          }
-         if (tempMax != i){
+         if (tempMin != i){
              //swap
-             int swap = array[tempMax];
-             array[tempMax] = array[i];
+             int swap = array[tempMin];
+             array[tempMin] = array[i];
              array[i] = swap;
          }
 
+ 
+        count += 1;
 
+        
      }
+        cout << "It took " << count << " swaps to sort the array..."<< endl;
 
  }
 
@@ -75,18 +78,22 @@ int check(int arraySize){
         // }
 
     //sort array using selection sort algorithm
+
+    //create a global variable for to capture how many times it sorted in the algorithm
         sort(array,arraySize);
 
     // print array in  decinding order
-    cout << "This is the sorted array in an ascending order:";
+    cout << "This is the sorted array in an ascending order:" << endl;
     for (int i = 0; i < arraySize; ++i){
             cout << " " <<  array[i];
         }
 
-        // state that we chose the maximum to traverse
+        // state that we chose the minimum to traverse
         cout << ""<< endl;
 
-        cout << "The algorithm selected the maximum for the traverse of the array."<< endl;
+        cout << "The algorithm selected the minimum for the traverse of the array."<< endl;
+
+        
    
 
      
