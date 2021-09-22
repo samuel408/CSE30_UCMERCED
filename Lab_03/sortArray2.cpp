@@ -78,7 +78,7 @@ int check(int arraySize){
         sort(array,arraySize);
 
     // print array in  decinding order
-    cout << "This is the sorted array in an decending order:";
+    cout << "This is the sorted array in an ascending order:";
     for (int i = 0; i < arraySize; ++i){
             cout << " " <<  array[i];
         }
