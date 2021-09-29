@@ -39,29 +39,24 @@ int check(int arraySize){
 
      else{
          // dencending
-            for(int i = 0; i < size  ; i++){
+        for(int i = 1; i < size; i++){
+                 // declare a variable to store the maximum value and the temporary minimum
+
         int max = array[i];
-        int tempMax = i;
-         for(int j = i; j < size; j++){
-             if (array[j] > array[tempMax]){
-                 max = array[j];
-                 tempMax = j;
+       int j = i - 1;
+       while ( max > array[j] &&  j >= 0){
 
-             }
+       array[j + 1] = array[j];
+       j = j - 1;
 
-         }
-         if (tempMax != i){
-             //swap
-             int swap = array[tempMax];
-             array[tempMax] = array[i];
-             array[i] = swap;
-         }
+       }
+       array[j + 1] = max;
 
-
+        
      }
 
     // print array in  decending order
-    cout << "This is the sorted array in an ascending order:" << endl;
+    cout << "This is the sorted array in an decending order:" << endl;
      }
 
  }
