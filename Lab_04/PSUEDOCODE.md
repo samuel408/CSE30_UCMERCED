@@ -73,6 +73,57 @@ print "decending order"
 end else
 
 ----------------------------------------------------
+sortArray2.cpp
+
+ function sortArr(int array[],int size, bool order)
+     //acending
+     if order = 0 
+
+  
+        for i <- 1  to size - 1  do
+                 // declare a variable to store the maximum value and the temporary minimum
+
+         min <- array[i]
+        j <- i 
+       while j > 0 and array[j-1] > min
+
+       array[j] <- array[j-1]
+       j <- j - 1
+       
+       end while
+
+       
+       array[j] <- min
+
+        end for
+   
+        print"acending order"
+    
+     end if
+
+     else
+         // dencending
+        for i <-1 to size do
+                 // declare a variable to store the maximum value and the temporary minimum
+
+         max <- array[i]
+        j <- i - 1
+
+       while max > array[j] and  j >= 0
+
+       array[j + 1] <- array[j]
+       j <- j - 1
+       end while
+
+       
+       array[j + 1] <- max
+       end for
+
+    
+     
+
+    print " dencending order
+    end else
          
 
 
