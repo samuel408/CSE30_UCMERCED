@@ -4,6 +4,21 @@
 #include <string>
 
 using namespace std;
+// using a loop
+int binarySearch(string *array,int size, string search){
+    int returnedValue = 0;
+    for (int i = 0;  i < size; i++){
+        if(array[i]==search){
+            returnedValue = i;
+        }
+        else {
+            returnedValue = -1;
+        }
+
+    }
+    return returnedValue;
+
+}
  int checkArraySort( string *array, int size ){
 
      int count=0, negCount=0;
@@ -22,7 +37,7 @@ using namespace std;
 
      }
       if (negCount == size - 1 && count == size){
-         return 0;
+         exit(1);
 
      }
 
@@ -86,16 +101,36 @@ int main()
 //calls fucntion checkSort array to grab a int value
     int function = checkArraySort( array, size);
 
-    //depending on the int value 
-    	if (function == -1){ //descending order
-		cout << "The array is sorted in descending order!" << endl;
-		}
-	    if (function == 0){ //not sorted
-		cout << "The array is not sorted!" << endl;
-		}
-	    if (function == 1){ //ascending
-		cout << "The array is sorted in ascending order!" << endl;
-		}
+    // //depending on the int value 
+    // 	if (function == -1){ //descending order
+	// 	cout << "The array is sorted in descending order!" << endl;
+	// 	}
+	//     if (function == 0){ //not sorted
+	// 	cout << "The array is not sorted!" << endl;
+	// 	}
+	//     if (function == 1){ //ascending
+	// 	cout << "The array is sorted in ascending order!" << endl;
+	// 	}
+    
+    // asking to insert a value they want to search the array for 
+    string searchKey ="";
+    cout<< "Enter a string to be searched within the array: ";
+    cin >>searchKey;
+
+    int search = binarySearch(array,size,searchKey);
+    
+        //if the key is not found
+        if( search == -1 ){
+            cout<< "The key was not found in the array!"<<endl;
+
+        }
+
+        else{//if the key is found
+    
+            cout<< "found key "<< searchKey<< " at index "<< search<<"!"<<endl;
+
+        }
+
 
     //close input and out put
 	fileInput.close();  
